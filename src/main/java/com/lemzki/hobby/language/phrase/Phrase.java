@@ -29,6 +29,7 @@ public class Phrase {
             orphanRemoval = true
     )
     @EqualsAndHashCode.Exclude
+    @ToString.Exclude
     private Set<Translation> translations = new HashSet<>();
 
     public void addTranslation(Translation translation){

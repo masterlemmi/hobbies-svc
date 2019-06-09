@@ -36,6 +36,8 @@ public class HobbiesServiceApplication {
             List<CSVRecord> rows = shortcuts.getRecords();
 
             Language cebuano = langRepo.findByName("Cebuano");
+            Language ilocano = langRepo.findByName("Ilocano");
+
 
             rows.forEach(row -> {
                 String english = row.get(1);
@@ -50,10 +52,19 @@ public class HobbiesServiceApplication {
                 tranRepo.save(translation);
                 savedPhrase.addTranslation(translation);
                 phraseRepo.save(phrase);
-
-
             });
+
+            Phrase etoBalay = phraseRepo.findByPhrase("this is my house");
+            Translation iloTran = new Translation();
+            iloTran.setTranslation("Daytoy ti balay ko");
+            iloTran.setLanguage(ilocano);
+            iloTran.setPhrase(etoBalay);
+            Translation savedTran = tranRepo.save(iloTran);
+//            etoBalay.addTranslation(savedTran);
+//            phraseRepo.save(etoBalay);
         };
+
+
     }
 
 }
