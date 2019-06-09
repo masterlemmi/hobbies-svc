@@ -8,7 +8,7 @@ services:
   - docker
 
 script:
-  - ./gradlew build --scan -s
+  - ./gradlew build
   - docker build -t $DOCKER_UN/hobbies-svc .
   - echo "$DOCKER_PW" | docker login -u "$DOCKER_UN" --password-stdin
   - docker push $DOCKER_UN/hobbies-svc
