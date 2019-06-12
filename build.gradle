@@ -21,12 +21,14 @@ configurations {
 }
 
 repositories {
+	mavenLocal()
 	mavenCentral()
 }
 
 dependencies {
 	compile fileTree(dir: 'libs', include: ['*.jar'])
-	
+	implementation 'com.lemzki:commons:0.0.1'	
+
 	//spring
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'

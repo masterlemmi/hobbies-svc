@@ -1,5 +1,7 @@
 language: java
-install: true
+install:
+  - git clone https://github.com/masterlemmi/commons.git
+  - cd commons && ./gradlew build publishToMavenLocal
 
 jdk:
   - oraclejdk8
